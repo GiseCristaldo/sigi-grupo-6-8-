@@ -3,6 +3,10 @@ import Administrativo from "./administrativos/model/Administrativo.js";
 import Rol from "./roles/model/Rol.js";
 import InstanciaEvaluativa from "./instanciasEvaluativas/model/InstanciaEvaluativa.js";
 import LegajoXInstanciaEvaluativa from "./legajosXInstanciasEvaluativas/model/LegajoXInstanciaEvaluativa.js";
+import MesaExamen from "./mesasExamenes/model/MesaExamen.js";
+import DesignacionesDocente from "./designacionesDocente/model/DesignacionDocente.js";
+// import Docente from "./docentes/model/Docente.js";
+// import UnidadCurricular from "./unidadCurricular/model/UnidadCurricular.js";
 
 // ---------- Rol ----------
 Rol.hasMany(Administrativo, { foreignKey: "idRol" });
@@ -19,4 +23,17 @@ LegajoXInstanciaEvaluativa.belongsTo(InstanciaEvaluativa, { foreignKey: "idInsta
 Administrativo.hasMany(LegajoXInstanciaEvaluativa, { foreignKey: "idAdministrativo" });
 LegajoXInstanciaEvaluativa.belongsTo(Administrativo, { foreignKey: "idAdministrativo" });
 
-export { sequelize, Administrativo, Rol, InstanciaEvaluativa, LegajoXInstanciaEvaluativa };
+// ---------- DesignacionesDocente ----------
+// Una designación pertenece a un docente y a una unidad curricular
+// DesignacionesDocente.belongsTo(Docente, { foreignKey: "idDocente" });
+// Docente.hasMany(DesignacionesDocente, { foreignKey: "idDocente" });
+
+// DesignacionesDocente.belongsTo(UnidadCurricular, { foreignKey: "idUnidadCurricular" });
+// UnidadCurricular.hasMany(DesignacionesDocente, { foreignKey: "idUnidadCurricular" });
+
+// ---------- MesaExamen ----------
+// Una mesa pertenece a una unidad curricular (usando el nombre que TS nos sopló: unidadCurricularId)
+// MesaExamen.belongsTo(UnidadCurricular, { foreignKey: "unidadCurricularId" });
+// UnidadCurricular.hasMany(MesaExamen, { foreignKey: "unidadCurricularId" });
+
+export { sequelize, Administrativo, Rol, InstanciaEvaluativa, LegajoXInstanciaEvaluativa, MesaExamen, DesignacionesDocente };
