@@ -6,6 +6,8 @@ import { sequelize } from "./modules/index.js";
 import { administrativoRouter } from "./modules/administrativos/administrativo.routes.js";
 import { errorHandler } from "./core/middlewares/error-handler.middleware.js";
 import { rolRouter } from './modules/roles/roles.routes.js';
+import { instanciaEvaluativaRouter } from './modules/instanciasEvaluativas/instancia-evaluativa.routes.js';
+import { legajoXInstanciaEvaluativaRouter } from './modules/legajosXInstanciasEvaluativas/legajo-x-instancia-evaluativa.routes.js';
 
 dotenv.config();
 
@@ -19,6 +21,8 @@ app.use(morgan("dev"));
 
 app.use(`${RAIZ}/administrativos`, administrativoRouter);
 app.use(`${RAIZ}/roles`, rolRouter);
+app.use(`${RAIZ}/instancias-evaluativas`, instanciaEvaluativaRouter);
+app.use(`${RAIZ}/legajos-x-instancias-evaluativas`, legajoXInstanciaEvaluativaRouter);
 
 app.get("/health", (req: Request, res: Response) => {
   res.json({
