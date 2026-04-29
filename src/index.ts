@@ -8,6 +8,8 @@ import { errorHandler } from "./core/middlewares/error-handler.middleware.js";
 import { rolRouter } from './modules/roles/roles.routes.js';
 import { instanciaEvaluativaRouter } from './modules/instanciasEvaluativas/instancia-evaluativa.routes.js';
 import { legajoXInstanciaEvaluativaRouter } from './modules/legajosXInstanciasEvaluativas/legajo-x-instancia-evaluativa.routes.js';
+import { mesaExamenRouter } from './modules/mesasExamenes/mesa-examen.routes.js';
+import { designacionDocenteRouter } from './modules/designacionesDocente/designacion-docente.routes.js';
 import { divisionRouter } from "./modules/division/division.routes.js";
 import { divisionXUnidadCurricularRouter } from "./modules/divisionXUnidadCurricular/divisionXUnidadCurricular.routes.js";
 import { estudianteXUnidadCurricularRouter } from './modules/estudiantesXUnidadCurricular/estudiantesXUnidadCurricular.routes.js';

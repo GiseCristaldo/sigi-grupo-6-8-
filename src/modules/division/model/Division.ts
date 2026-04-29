@@ -32,28 +32,16 @@ Division.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_docente",
-      references: {
-        model: "docentes",
-        key: "id"
-      }
     },
     idCurso: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_curso",
-      references: {
-        model: "cursos",
-        key: "id"
-      }
     },
     idAdministrativo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_administrativo",
-      references: {
-        model: "administrativos",
-        key: "id"
-      }
     }
   },
   {

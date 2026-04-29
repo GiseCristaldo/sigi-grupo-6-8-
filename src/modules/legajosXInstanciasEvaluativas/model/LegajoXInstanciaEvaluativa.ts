@@ -39,19 +39,11 @@ LegajoXInstanciaEvaluativa.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'id_instancia_evaluativa',
-      references: {
-        model: 'instancias_evaluativas',
-        key: 'id',
-      },
     },
     idLegajo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'id_legajo',
-      references: {
-        model: 'legajos',
-        key: 'id',
-      },
     },
     nota: {
       type: DataTypes.INTEGER,
@@ -70,10 +62,6 @@ LegajoXInstanciaEvaluativa.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'id_administrativo',
-      references: {
-        model: 'administrativos',
-        key: 'id',
-      },
     },
   },
   {
