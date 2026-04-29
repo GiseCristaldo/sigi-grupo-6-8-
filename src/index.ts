@@ -10,6 +10,9 @@ import { instanciaEvaluativaRouter } from './modules/instanciasEvaluativas/insta
 import { legajoXInstanciaEvaluativaRouter } from './modules/legajosXInstanciasEvaluativas/legajo-x-instancia-evaluativa.routes.js';
 import { mesaExamenRouter } from './modules/mesasExamenes/mesa-examen.routes.js';
 import { designacionDocenteRouter } from './modules/designacionesDocente/designacion-docente.routes.js';
+import { divisionRouter } from "./modules/division/division.routes.js";
+import { divisionXUnidadCurricularRouter } from "./modules/divisionXUnidadCurricular/divisionXUnidadCurricular.routes.js";
+
 
 dotenv.config();
 
