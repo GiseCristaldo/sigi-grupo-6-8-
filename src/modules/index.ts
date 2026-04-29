@@ -7,6 +7,9 @@ import MesaExamen from "./mesasExamenes/model/MesaExamen.js";
 import DesignacionesDocente from "./designacionesDocente/model/DesignacionDocente.js";
 // import Docente from "./docentes/model/Docente.js";
 // import UnidadCurricular from "./unidadCurricular/model/UnidadCurricular.js";
+import Division from "./division/model/Division.js";
+import DivisionXUnidadCurricular from "./divisionXUnidadCurricular/model/DivisionXUnidadCurricular.js";
+
 
 // ---------- Rol ----------
 Rol.hasMany(Administrativo, { foreignKey: "idRol" });
@@ -36,4 +39,15 @@ LegajoXInstanciaEvaluativa.belongsTo(Administrativo, { foreignKey: "idAdministra
 // MesaExamen.belongsTo(UnidadCurricular, { foreignKey: "unidadCurricularId" });
 // UnidadCurricular.hasMany(MesaExamen, { foreignKey: "unidadCurricularId" });
 
-export { sequelize, Administrativo, Rol, InstanciaEvaluativa, LegajoXInstanciaEvaluativa, MesaExamen, DesignacionesDocente };
+// ---------- Division ----------
+Administrativo.hasMany(Division, { foreignKey: "idAdministrativo" });
+Division.belongsTo(Administrativo, { foreignKey: "idAdministrativo" });
+
+// ---------- DivisionXUnidadCurricular ----------
+Division.hasMany(DivisionXUnidadCurricular, { foreignKey: "idDivision" });
+DivisionXUnidadCurricular.belongsTo(Division, { foreignKey: "idDivision" });
+
+Administrativo.hasMany(DivisionXUnidadCurricular, { foreignKey: "idAdministrativo" });
+DivisionXUnidadCurricular.belongsTo(Administrativo, { foreignKey: "idAdministrativo" });
+
+export { sequelize, Administrativo, Rol, InstanciaEvaluativa, LegajoXInstanciaEvaluativa, MesaExamen, DesignacionesDocente, Division, DivisionXUnidadCurricular };
