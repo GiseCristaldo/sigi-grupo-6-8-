@@ -34,19 +34,16 @@ DivisionXUnidadCurricular.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_division",
-      references: { model: "divisiones", key: "id" },
     },
     idUnidadCurricular: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_unidad_curricular",
-      references: { model: "unidades_curriculares", key: "id" },
     },
     idAdministrativo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "id_administrativo",
-      references: { model: "administrativos", key: "id" },
     },
   },
   {

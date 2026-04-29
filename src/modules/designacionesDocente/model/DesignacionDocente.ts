@@ -58,28 +58,16 @@ DesignacionesDocente.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_docente",
-            references: {
-                model: "docentes",
-                key: "id"
-            }
         },
         idDivisionXUnidadCurricular: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_division_x_unidad_curricular",
-            references: {
-                model: "divisiones_x_unidades_curriculares",
-                key: "id"
-            }
         },
         idCicloLectivo: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_ciclo_lectivo",
-            references: {
-                model: "ciclos_lectivos",
-                key: "id"
-            }
         },
         turno: {
             type: DataTypes.STRING,
@@ -105,10 +93,6 @@ DesignacionesDocente.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_administrativo",
-            references: {
-                model: "administrativos",
-                key: "id"
-            }
         },
         fechaVtoMAB: {
             type: DataTypes.DATEONLY,

@@ -66,13 +66,11 @@ MesaExamen.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "turno_examen_id",
-            references: { model: "turnos_examenes", key: "id" },
         },
         unidadCurricularId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "unidad_curricular_id",
-            references: { model: "unidades_curriculares", key: "id" },
         },
         fecha: {
             type: DataTypes.DATEONLY,
@@ -86,19 +84,16 @@ MesaExamen.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_docente_presidente",
-            references: { model: "docentes", key: "id" },
         },
         idDocenteVocal1: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_docente_vocal1",
-            references: { model: "docentes", key: "id" },
         },
         idDocenteVocal2: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_docente_vocal2",
-            references: { model: "docentes", key: "id" },
         },
         totalInscripto: {
             type: DataTypes.INTEGER,

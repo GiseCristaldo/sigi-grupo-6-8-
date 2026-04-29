@@ -39,10 +39,6 @@ InstanciaEvaluativa.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'id_division_x_unidad_curricular',
-      references: {
-        model: 'divisiones_x_unidades_curriculares',
-        key: 'id',
-      },
     },
     descripcion: {
       type: DataTypes.STRING(255),
@@ -76,10 +72,6 @@ InstanciaEvaluativa.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'id_administrativo',
-      references: {
-        model: 'administrativos',
-        key: 'id',
-      },
     },
   },
   {
