@@ -30,6 +30,8 @@ app.use(`${RAIZ}/instancias-evaluativas`, instanciaEvaluativaRouter);
 app.use(`${RAIZ}/legajos-x-instancias-evaluativas`, legajoXInstanciaEvaluativaRouter);
 app.use(`${RAIZ}/mesas-examenes`, mesaExamenRouter);
 app.use(`${RAIZ}/designaciones-docente`, designacionDocenteRouter);
+app.use(`${RAIZ}/divisiones`, divisionRouter);
+app.use(`${RAIZ}/divisiones-x-unidades-curriculares`, divisionXUnidadCurricularRouter);
 
 app.get("/health", (req: Request, res: Response) => {
   res.json({
