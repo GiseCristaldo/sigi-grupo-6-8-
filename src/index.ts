@@ -10,7 +10,8 @@ import { instanciaEvaluativaRouter } from './modules/instanciasEvaluativas/insta
 import { legajoXInstanciaEvaluativaRouter } from './modules/legajosXInstanciasEvaluativas/legajo-x-instancia-evaluativa.routes.js';
 import { divisionRouter } from "./modules/division/division.routes.js";
 import { divisionXUnidadCurricularRouter } from "./modules/divisionXUnidadCurricular/divisionXUnidadCurricular.routes.js";
-
+import { estudianteXUnidadCurricularRouter } from './modules/estudiantesXUnidadCurricular/estudiantesXUnidadCurricular.routes.js';
+import { asistenciaRouter } from './modules/asistencia/asistencia.routes.js';
 
 dotenv.config();
 
@@ -26,6 +27,9 @@ app.use(`${RAIZ}/administrativos`, administrativoRouter);
 app.use(`${RAIZ}/roles`, rolRouter);
 app.use(`${RAIZ}/instancias-evaluativas`, instanciaEvaluativaRouter);
 app.use(`${RAIZ}/legajos-x-instancias-evaluativas`, legajoXInstanciaEvaluativaRouter);
+app.use(`${RAIZ}/estudiantes-x-unidad-curricular`, estudianteXUnidadCurricularRouter);
+app.use(`${RAIZ}/asistencias`, asistenciaRouter);
+
 
 app.get("/health", (req: Request, res: Response) => {
   res.json({
