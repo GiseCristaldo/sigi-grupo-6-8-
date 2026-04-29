@@ -33,22 +33,8 @@ export const mesaExamenService = {
     return MesaExamen.findByPk(id);
   },
 
-  /**
-   * Crea una mesa de examen mapeando los campos del DTO.
-   */
   async create(data: CreateMesaExamenDto) {
-    return MesaExamen.create({
-      unidadCurricularId: data.idUnidadCurricular,
-
-      ['curso' as any]: data.curso,
-
-      fecha: data.fecha,
-      tipo: data.tipo,
-      idCicloLectivo: 1,
-      hora: '08:00',
-      llamado: 1,
-      estado: 'PENDIENTE'
-    } as any);
+    return MesaExamen.create(data as any);
   },
 
   async update(id: number, data: UpdateMesaExamenDto) {

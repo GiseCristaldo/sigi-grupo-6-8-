@@ -6,7 +6,7 @@ export const TipoMesaExamen = z.enum(["ORDINARIO", "EXTRAORDINARIO", "RECUPERACI
 export const CreateMesaExamenDto = z.object({
   turnoExamenId: z.number().int().positive(),
   unidadCurricularId: z.number().int().positive(),
-  fecha: z.coerce.date(),
+  fecha: z.string().date('La fecha debe tener formato YYYY-MM-DD'),
   hora: z.string().regex(/^([01]\d|2[0-3]):([0-5]\d)$/, "Formato de hora inválido (HH:mm)"),
   idDocentePresidente: z.number().int().positive(),
   idDocenteVocal1: z.number().int().positive(),
