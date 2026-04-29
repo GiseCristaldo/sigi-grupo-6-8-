@@ -37,23 +37,7 @@ export const designacionDocenteService = {
    * Crea una nueva designación mapeando los campos del DTO a la base de datos.
    */
   async create(data: CreateDesignacionDocenteDto) {
-    const payload: any = {
-      idDocente: data.idDocente,
-      idUnidadCurricular: data.idUnidadCurricular,
-      cargo: data.cargo,
-      fechaInicio: data.fechaInicio,
-      horasSemanales: data.horasSemanales,
-      idCicloLectivo: 1,
-      idDivisionXUnidadCurricular: 1,
-      turno: 'MAÑANA',
-      regimen: 'HORAS',
-      estado: 'ACTIVO',
-      adscripto: false,
-      horasRelojSemanales: data.horasSemanales,
-      observaciones: '',
-      aula: 'A definir'
-    };
-    return DesignacionDocente.create(payload as any);
+    return DesignacionDocente.create(data);
   },
 
   async update(id: number, data: UpdateDesignacionDocenteDto) {
