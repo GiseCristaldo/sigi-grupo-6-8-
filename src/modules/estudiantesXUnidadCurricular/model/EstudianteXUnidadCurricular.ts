@@ -1,5 +1,5 @@
 import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional } from "sequelize";
-import sequelize from "../config/database/conexion.js";
+import sequelize from "../../../config/database/conexion.js";
 
 interface EstudianteXUnidadCurricularAttributes extends InferAttributes<EstudianteXUnidadCurricular> {
     id: number;
@@ -39,19 +39,11 @@ EstudianteXUnidadCurricular.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_division_x_unidad_curricular",
-            references: {
-                model: "divisiones_x_unidades_curriculares",
-                key: "id"
-            }
         },
         idLegajo: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_legajo",
-            references: {
-                model: "legajos",
-                key: "id"
-            }
         },
         fechaDeInscripcion: {
             type: DataTypes.DATEONLY,
@@ -66,10 +58,6 @@ EstudianteXUnidadCurricular.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_administrativo",
-            references: {
-                model: "administrativos",
-                key: "id"
-            }
         }
     },
     {

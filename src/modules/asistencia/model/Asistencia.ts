@@ -1,6 +1,6 @@
 // 1.34 Asistencia
 import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional } from "sequelize";
-import sequelize from "../config/database/conexion.js";
+import sequelize from "../../../config/database/conexion.js";
 
 interface AsistenciaAttributes extends InferAttributes<Asistencia> {
     id: number;
@@ -40,7 +40,6 @@ Asistencia.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_division_x_unidad_curricular",
-            references: { model: "divisiones_x_unidades_curriculares", key: "id" },
         },
         fecha: {
             type: DataTypes.DATEONLY,
@@ -54,13 +53,11 @@ Asistencia.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_legajo",
-            references: { model: "legajos", key: "id" },
         },
         idAdministrativo: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: "id_administrativo",
-            references: { model: "administrativos", key: "id" },
         },
     },
     {
