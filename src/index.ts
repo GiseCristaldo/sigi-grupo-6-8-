@@ -12,7 +12,8 @@ import { mesaExamenRouter } from './modules/mesasExamenes/mesa-examen.routes.js'
 import { designacionDocenteRouter } from './modules/designacionesDocente/designacion-docente.routes.js';
 import { divisionRouter } from "./modules/division/division.routes.js";
 import { divisionXUnidadCurricularRouter } from "./modules/divisionXUnidadCurricular/divisionXUnidadCurricular.routes.js";
-
+import { estudianteXUnidadCurricularRouter } from './modules/estudiantesXUnidadCurricular/estudiantesXUnidadCurricular.routes.js';
+import { asistenciaRouter } from './modules/asistencia/asistencia.routes.js';
 
 dotenv.config();
 
@@ -28,10 +29,9 @@ app.use(`${RAIZ}/administrativos`, administrativoRouter);
 app.use(`${RAIZ}/roles`, rolRouter);
 app.use(`${RAIZ}/instancias-evaluativas`, instanciaEvaluativaRouter);
 app.use(`${RAIZ}/legajos-x-instancias-evaluativas`, legajoXInstanciaEvaluativaRouter);
-app.use(`${RAIZ}/mesas-examenes`, mesaExamenRouter);
-app.use(`${RAIZ}/designaciones-docente`, designacionDocenteRouter);
-app.use(`${RAIZ}/divisiones`, divisionRouter);
-app.use(`${RAIZ}/divisiones-x-unidades-curriculares`, divisionXUnidadCurricularRouter);
+app.use(`${RAIZ}/estudiantes-x-unidad-curricular`, estudianteXUnidadCurricularRouter);
+app.use(`${RAIZ}/asistencias`, asistenciaRouter);
+
 
 app.get("/health", (req: Request, res: Response) => {
   res.json({
